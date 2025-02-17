@@ -28,5 +28,9 @@ test.describe('execute', () => {
 
     //check if we are donation landing page
     expect(await landingPage.textOnDonationPage.isVisible()).toBeTruthy()
+
+    //take a screenshot
+    const screenshot = 'screenshot'+ new Date().toLocaleString()+ '.png';
+    await page.screenshot({ path: screenshot})
   });
 })
