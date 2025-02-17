@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:goodstack": "playwright test --config=./goodstack/playwright.config.ts"
+    "test:goodstack": "playwright test --config=./goodstack/playwright.config.ts",
+    "test:newsite": "playwright test --config=./newsite/playwright.config.ts"
   },
   "author": "",
   "license": "ISC",

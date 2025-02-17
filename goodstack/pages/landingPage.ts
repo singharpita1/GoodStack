@@ -14,6 +14,7 @@ export class LandingPage {
     this.donationsButton = this.page.getByRole('menuitem', { name: 'Donations Send donations to'});
     this.textOnDonationPage = this.page.getByText('Send donations to causes');
   }
+  
   // Method to click the "Products" button
   async clickProductsButton() {
     await this.productsButton.click();

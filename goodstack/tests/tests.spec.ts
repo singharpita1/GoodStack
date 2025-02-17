@@ -1,6 +1,4 @@
 import { expect, test } from '@playwright/test'
-import { Page } from 'playwright'
-import { Logger } from '@playwright/test'
 import { GoodstackPage } from '../pages/base.page'
 import { LandingPage } from '../pages/landingPage'
 
