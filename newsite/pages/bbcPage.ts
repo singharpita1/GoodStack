@@ -44,20 +44,23 @@ export class BbcPage {
         return this.page.goto(this.url, { waitUntil: 'networkidle' })
     }
 
-    // Method to click the "SignIn and check SignIn page is displayed"
+    // Method to click the "Sign In" button and verify the Sign In page is displayed
     async clickSignInAndCheckLoginPageIsDisplayed() {
+        await expect(this.bbcSignIn).toBeVisible();
         await this.bbcSignIn.click();
 
-        // Handle cookies pop-up
+        // Handle cookies pop-up if present
         const acceptCookies = this.cookiePopUP.getByTestId('accept-button');
         if (await acceptCookies.isVisible()) {
-            await acceptCookies.click();
+        await acceptCookies.waitFor();
+        await acceptCookies.click();
         }
-        //check if enter email is visible
-        expect(await this.email).toBeVisible();
+
+        // Wait for login page elements to appear
+        await expect(this.email).toBeVisible();
     }
 
-     // Method to to check all the header items on bbc homepage
+     // Method to to check all the header items on BBC homepage
      async checkHeadersOnBbcHomepage() {
         const headerElements = [
             this.notification,
