@@ -13,10 +13,8 @@ import { waitForDebugger } from 'inspector';
 
 test.describe('execute', () => {
   let bbcPage: BbcPage;
-  let homePage: GoodstackPage;
 
   test.beforeEach(async ({ page }) => {
-    homePage = new GoodstackPage(page)
     bbcPage = new BbcPage(page)
     console.log("bbcPage.url is:", bbcPage.url)
     await bbcPage.visit();  // Visit the homepage before each test
